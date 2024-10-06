@@ -1,12 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
-import { Component } from 'react';
+import {BrowserRouter, Route,Routes} from 'react-router-dom'
+import React, { Component } from 'react';
+
+import Navbar from './components/Navbar'
+import Contact from './components/Contact'
+import Index from './components/Index';
 
 class App extends Component {
   render(){
     return(
       <div>
-        project!!
+        <BrowserRouter>
+        <Navbar/>
+        <Routes>
+        <Route exact path="/" Component={Index}/>
+        <Route exact path="/contact" Component={Contact}/>
+        </Routes>
+        </BrowserRouter>
       </div>
     )
   }
